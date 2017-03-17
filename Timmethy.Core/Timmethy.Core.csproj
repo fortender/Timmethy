@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D7B06F9A-7D88-4F35-A09D-7C7ED0EC0AFC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Timmethy.Core</RootNamespace>
+    <AssemblyName>Timmethy.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\SimulatorModeChangedEventArgs.cs" />
+    <Compile Include="Helpers\CellArithmetic.cs" />
+    <Compile Include="Helpers\EnumerableX.cs" />
+    <Compile Include="Helpers\Enums.cs" />
+    <Compile Include="InstructionExecuter.cs" />
+    <Compile Include="MacroRecording.cs" />
+    <Compile Include="Memory\CellChangedEventArgs.cs" />
+    <Compile Include="CustomBinding.cs" />
+    <Compile Include="Helpers\SerializationExtensions.cs" />
+    <Compile Include="Helpers\IntX.cs" />
+    <Compile Include="Memory\IMemory.cs" />
+    <Compile Include="Memory\MicroOperationCell.cs" />
+    <Compile Include="Memory\ClippedIntegerMemory.cs" />
+    <Compile Include="Memory\RegisterMemory.cs" />
+    <Compile Include="Memory\VisualizedCell\HighLowValueCell.cs" />
+    <Compile Include="Memory\VisualizedCell\HighLowValueCellContainer.cs" />
+    <Compile Include="Memory\VisualizedCell\IMemoryCellDereferencer.cs" />
+    <Compile Include="Memory\VisualizedCell\IMemoryCellInfoProvider.cs" />
+    <Compile Include="Memory\VisualizedCell\IMicroProgramMemoryCellInfoProvider.cs" />
+    <Compile Include="Memory\VisualizedCell\IRandomAccessMemoryCellInfoProvider.cs" />
+    <Compile Include="Memory\Memory.cs" />
+    <Compile Include="MicroOperation.cs" />
+    <Compile Include="PersistenceHelper.cs" />
+    <Compile Include="PropertyChangedNotifier.cs" />
+    <Compile Include="ReadOnlyObservableCollection.cs" />
+    <Compile Include="Register\Type.cs" />
+    <Compile Include="Register\ValueRangeType.cs" />
+    <Compile Include="Simulator.cs" />
+    <Compile Include="Configuration\SimulatorMode.cs" />
+    <Compile Include="Helpers\StringX.cs" />
+    <Compile Include="Memory\VisualizedCell\MemoryCell.cs" />
+    <Compile Include="Memory\VisualizedCell\MemoryCellContainer.cs" />
+    <Compile Include="Memory\VisualizedCell\MicroProgramMemoryCell.cs" />
+    <Compile Include="Memory\VisualizedCell\MicroProgramMemoryCellContainer.cs" />
+    <Compile Include="Memory\VisualizedCell\RandomAccessMemoryCell.cs" />
+    <Compile Include="Memory\VisualizedCell\RandomAccessMemoryCellContainer.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

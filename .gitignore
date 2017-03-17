@@ -259,3 +259,18 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+
+# Timmethy Project Files
+*.tproj
+*.tmpm
+*.tram
+
+# Build Archives
+*.zip
+
+# NuGet Packages
+packages/
+packages.config
+
+# Class diagrams
+*.cd
