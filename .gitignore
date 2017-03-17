@@ -262,7 +262,6 @@ __pycache__/
 
 # Timmethy Project Files
 *.tproj
-*.tmpm
 *.tram
 
 # Build Archives
@@ -274,3 +273,7 @@ packages.config
 
 # Class diagrams
 *.cd
+/bonsai.tmpm
+/indizierteadressierung.tmpm
+/johnny.tmpm
+/testmem.tmpm
