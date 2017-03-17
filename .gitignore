@@ -273,7 +273,4 @@ packages.config
 
 # Class diagrams
 *.cd
-/bonsai.tmpm
-/indizierteadressierung.tmpm
-/johnny.tmpm
-/testmem.tmpm
+samples/
