@@ -68,7 +68,7 @@ namespace Timmethy.Core.Memory {
         ///     Gets an enumerator which enables to iterate through the memory.
         /// </summary>
         /// <returns>The <see cref="IEnumerator{T}" /> to iterate through the memory.</returns>
-        public IEnumerator<T> GetEnumerator() => new GenericEnumerator<T>(_cells);
+        public IEnumerator<T> GetEnumerator() => ((IEnumerable<T>) _cells).GetEnumerator();
 
         /// <summary>
         ///     Gets an enumerator which enables to iterate through the memory.
@@ -89,70 +89,5 @@ namespace Timmethy.Core.Memory {
         }
 
         #endregion
-    }
-    
-    /// <summary>
-    ///     Is needed for the implementation of the <see cref="IEnumerable{T}" /> interface to enable accessors to iterate
-    ///     through an array.
-    /// </summary>
-    /// <typeparam name="T">The array type</typeparam>
-    public class GenericEnumerator<T> : IEnumerator<T> {
-        private readonly T[] _cells;
-        private int _position = -1;
-
-        /// <summary>
-        ///     Initializes a new instance of the <see cref="GenericEnumerator{T}" /> class.
-        /// </summary>
-        /// <param name="cells"></param>
-        public GenericEnumerator(T[] cells) {
-            _cells = cells;
-        }
-
-        /// <summary>
-        ///     Gets the cell at the current position.
-        /// </summary>
-        public T Current {
-            get {
-                try
-                {
-                    return _cells[_position];
-                }
-                catch (IndexOutOfRangeException)
-                {
-                    throw new InvalidOperationException();
-                }
-            }
-        }
-
-        /// <summary>
-        ///     Gets object at the current position
-        /// </summary>
-        object IEnumerator.Current => Current;
-
-        /// <summary>
-        ///     Releases all managed and unmanaged resources and notifies the <see cref="GC" />.
-        ///     Not needed here.
-        /// </summary>
-        public void Dispose() {
-        }
-
-        /// <summary>
-        ///     Increments the position and moves to the next array element.
-        /// </summary>
-        /// <returns>
-        ///     True, if the position is valid and less than the array's length. False, if the position fell out of bounds.
-        ///     (end-of-array)
-        /// </returns>
-        public bool MoveNext() {
-            _position++;
-            return _position < _cells.Length;
-        }
-
-        /// <summary>
-        ///     Resets the position.
-        /// </summary>
-        public void Reset() {
-            _position = -1;
-        }
     }
 }
